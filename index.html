@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Page</title>
+</head>
+<body>
+
+<h2>Send Message</h2>
+
+<input type="text" id="messageInput" placeholder="Type something..." />
+<button onclick="sendMessage()">Send</button>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  databaseURL: "https://YOUR_PROJECT-default-rtdb.firebaseio.com",
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
+function sendMessage() {
+  const input = document.getElementById("messageInput");
+  
+  db.ref("messages").push({
+    text: input.value,
+    time: Date.now()
+  });
+
+  input.value = "";
+}
+</script>
+
+</body>
+</html>

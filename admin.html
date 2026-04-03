@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Page</title>
+</head>
+<body>
+
+<h2>Admin Dashboard</h2>
+<div id="messages"></div>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  databaseURL: "https://YOUR_PROJECT-default-rtdb.firebaseio.com",
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
+const container = document.getElementById("messages");
+
+db.ref("messages").on("child_added", (snapshot) => {
+  const data = snapshot.val();
+
+  const p = document.createElement("p");
+  p.textContent = data.text;
+
+  container.appendChild(p);
+});
+</script>
+
+</body>
+</html>
