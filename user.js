@@ -45,6 +45,8 @@ input.addEventListener("keydown", (e) => {
   }
 });
 
-function goToLogin() {
+const loginBtn = document.getElementById("loginPageBtn");
+
+loginBtn.addEventListener("click", () => {
   window.location.href = "login.html";
-}
+});
