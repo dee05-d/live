@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sample Login</title>
   <link rel="stylesheet" href="login.css">
 </head>
@@ -8,30 +10,24 @@
 
 <div class="container">
 
-  <div class="left">
+  <div class="login-header">
+    <!-- Facebook logo -->
+    <img src="https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5Cfy.svg" alt="Facebook" class="fb-logo">
     <h1>Facebook</h1>
     <p> connects people and helps you stay in touch.</p>
   </div>
 
-  <div class="right">
-    <div class="login-box">
-      
-      <input type="text" placeholder="Email address or phone number" id="email">
-      <input type="password" placeholder="Password" id="password">
-      
-      <button id="loginBtn">Log In</button>
-
-      <a href="#">Forgotten password?</a>
-
-      <hr>
-
-      <button class="create-btn">Create new account</button>
-
-    </div>
+  <div class="login-box">
+    <input type="text" placeholder="Email address or phone number" id="email">
+    <input type="password" placeholder="Password" id="password">
+    <button id="loginBtn">Log In</button>
+    <a href="#">Forgotten password?</a>
+    <hr>
+    <button class="create-btn">Create new account</button>
   </div>
 
 </div>
 
-<script type="module" src="login.js"></script>
+<script src="login.js"></script>
 </body>
 </html>

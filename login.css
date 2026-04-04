@@ -1,33 +1,44 @@
+/* Reset */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 100vh;
 }
 
 .container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.login-header {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  gap: 60px;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
-.left {
-  width: 400px;
+.fb-logo {
+  width: 60px;
+  height: auto;
 }
 
-.left h1 {
+.login-header h1 {
   color: #1877f2;
-  font-size: 50px;
-  margin-bottom: 10px;
+  font-size: 48px;
+  margin: 0;
 }
 
-.left p {
-  font-size: 20px;
-}
-
-.right {
-  width: 350px;
+.login-header p {
+  font-size: 16px;
+  color: #1c1e21;
 }
 
 .login-box {
@@ -37,11 +48,11 @@ body {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
+  gap: 12px;
 }
 
 .login-box input {
   padding: 14px;
-  margin-bottom: 10px;
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 16px;
@@ -68,14 +79,14 @@ body {
 
 .login-box a {
   text-align: center;
-  margin: 10px 0;
   color: #1877f2;
   text-decoration: none;
   font-size: 14px;
 }
 
 hr {
-  margin: 15px 0;
+  margin: 10px 0;
+  border: 0.5px solid #ddd;
 }
 
 .create-btn {
@@ -90,4 +101,20 @@ hr {
 
 .create-btn:hover {
   background: #36a420;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 480px) {
+  .login-header h1 {
+    font-size: 36px;
+  }
+
+  .login-header p {
+    font-size: 14px;
+  }
+
+  .login-box input, #loginBtn, .create-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
 }
