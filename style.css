@@ -1,0 +1,389 @@
+.vote-info {
+  background: #fff;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.contestants {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  overflow: visible;
+  position: relative;   /* added for crown positioning */
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.voteBtn {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background: #1877f2;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.voteBtn:active {
+  transform: scale(0.95);
+}
+
+.count {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 🌸 Background glow */
+body {
+  background: linear-gradient(135deg, #ffe6f0, #ffd6eb, #fce1ff);
+  overflow-x: hidden;
+}
+
+/* 🌟 Floating glowing background */
+.beauty-bg {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 💖 Title glow */
+.beauty-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff4da6;
+  text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66b2;
+  animation: glowPulse 2s infinite alternate;
+}
+
+/* ✨ Glow animation */
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66b2;
+  }
+  to {
+    text-shadow: 0 0 20px #ff66b2, 0 0 40px #ff3399;
+  }
+}
+
+/* 🌸 Floating circles (background particles) */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #ffb6d9, transparent);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: float 10s infinite ease-in-out;
+}
+
+body::before {
+  top: 10%;
+  left: 5%;
+}
+
+body::after {
+  bottom: 10%;
+  right: 5%;
+  animation-delay: 3s;
+}
+
+/* 💫 Floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-40px); }
+  100% { transform: translateY(0px); }
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(255, 105, 180, 0.5);
+}
+
+/* 💗 Button glow */
+.voteBtn {
+  background: linear-gradient(45deg, #ff4da6, #ff99cc);
+  box-shadow: 0 0 10px #ff99cc;
+}
+
+.voteBtn:hover {
+  box-shadow: 0 0 20px #ff66b2;
+}
+
+.hearts::before {
+  content: "💗 💖 💕 💞 💓";
+  position: fixed;
+  font-size: 24px;
+  animation: floatHearts 15s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-10vh); }
+}
+
+/* 💎 Main container */
+.vote-info-box {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
+  animation: fadeIn 0.8s ease;
+}
+
+/* ✨ Titles */
+.section-title {
+  text-align: center;
+  color: #ff4da6;
+  margin-bottom: 15px;
+}
+
+.prize-title {
+  text-align: center;
+  margin: 10px 0;
+  color: #444;
+}
+
+/* 📊 Info rows */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 15px;
+}
+
+.label {
+  color: #555;
+}
+
+.value {
+  font-weight: bold;
+  color: #ff4da6;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 15px 0;
+}
+
+/* 🏆 Prize layout */
+.prizes {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Individual prize cards */
+.prize {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.prize:hover {
+  transform: translateY(-5px);
+}
+
+/* Special glow per rank */
+.gold {
+  border: 2px solid gold;
+}
+
+.silver {
+  border: 2px solid silver;
+}
+
+.bronze {
+  border: 2px solid #cd7f32;
+}
+
+/* ✨ Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🎉 Winner card */
+.winner {
+  position: relative;
+  border: 2px solid gold;
+  box-shadow: 0 0 20px gold;
+}
+
+/* 👑 Crown */
+.winner::before {
+  content: "👑";
+  position: absolute;
+  top: -25px;           /* adjust so crown floats above card */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  z-index: 10;          /* ensure crown is above card */
+  animation: crownGlow 1.5s infinite alternate;
+}
+
+/* ✨ Glow animation */
+@keyframes crownGlow {
+  from {
+    text-shadow: 0 0 5px gold;
+  }
+  to {
+    text-shadow: 0 0 20px gold;
+  }
+}
+
+/* 🌸 Overlay background */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 182, 193, 0.2);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 9999;
+}
+
+/* Show overlay */
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* 💖 Content box */
+.overlay-content {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+  animation: popIn 0.4s ease;
+}
+
+/* ✨ Text */
+.overlay-content p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ff4da6;
+  font-weight: bold;
+}
+
+/* 💫 Loader animation */
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ffd6eb;
+  border-top: 4px solid #ff4da6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Header layout */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+/* Sponsored text */
+.sponsored {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Brand styling */
+.brand {
+  color: #1877f2; /* Facebook blue */
+  font-weight: bold;
+}
+
+.brand {
+  color: #1877f2;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(24, 119, 242, 0.4);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* 🔥 THIS IS THE MAGIC */
+  border-radius: 12px;
+}
+
+.card h3 {
+  font-size: 14px;
+  margin: 8px 0 4px;
+}
+
+.count {
+  color: #ff4da6;
+  font-weight: bold;
+}
+
+.card img {
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}

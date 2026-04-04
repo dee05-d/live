@@ -1,20 +1,122 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Page</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Send Message</h2>
-
-<input type="text" id="messageInput" placeholder="Type something..." />
-<button id="sendBtn">Send</button>
 
 
+
+
+<div class="beauty-bg">
+  <h1 class="beauty-title">Blush Royale ✨</h1>
+</div>
+
+<div class="section-header">
+  <h2>Vote for Your Favorite</h2>
+  <span class="sponsored">
+    Sponsored by <strong class="brand">facebook</strong>
+  </span>
+</div>
+
+
+<div class="hearts"></div>
+
+<div class="vote-info-box">
+
+<p>⏳ Time left: <span id="countdown"></span></p>
+
+  <h2 class="section-title">✨ Contest Details</h2>
+
+  <div class="info-row">
+    <span class="label">⏳ Deadline</span>
+    <span class="value">30th April 2026</span>
+  </div>
+
+  
+
+  <div class="divider"></div>
+
+  <h3 class="prize-title">🏆 Rewards</h3>
+
+  <div class="prizes">
+    <div class="prize gold">
+      🥇 <strong>1st</strong>
+      <p>$100,000</p>
+    </div>
+
+    <div class="prize silver">
+      🥈 <strong>2nd</strong>
+      <p>$50,000</p>
+    </div>
+
+    <div class="prize bronze">
+      🥉 <strong>3rd</strong>
+      <p>$20,000</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="contestants">
+
+  <div class="card">
+    <img src="https://via.placeholder.com/150">
+    <h3>AlICE ROSSITER</h3>
+    <p class="count" data-target="921">0</p>
+    <button class="voteBtn">Vote</button>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/150">
+    <h3>BELLA ANDERSON</h3>
+    <p class="count" data-target="934">0</p>
+    <button class="voteBtn">Vote</button>
+  </div>
+
+  <div class="card">
+    <img src="images/ruth.jpg" alt="Ruth">
+    <h3>RUTH JESSICA</h3>
+    <p class="count" data-target="1187">0</p>
+    <button class="voteBtn">Vote</button>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/150">
+    <h3>AISHAT LAWAL</h3>
+    <p class="count" data-target="1282">0</p>
+    <button class="voteBtn">Vote</button>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/150">
+    <h3>ELLA STEGAN</h3>
+    <p class="count" data-target="528">0</p>
+    <button class="voteBtn">Vote</button>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/150">
+    <h3>FIONA FIONA</h3>
+   <p class="count" data-target="785">0</p>
+    <button class="voteBtn">Vote</button>
+  </div>
+
+</div>
 
 <div id="status"></div>
-<button id="loginPageBtn">Go to Login</button>
+
 <script type="module" src="user.js"></script>
+
+<div id="loginOverlay" class="overlay">
+  <div class="overlay-content">
+    <div class="loader"></div>
+    <p>Please login first 💗</p>
+  </div>
+</div>
 
 </body>
 </html>

